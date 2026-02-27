@@ -5,3 +5,5 @@ matplotlib
 torch
 pydantic
 fastapi
+uvicorn
+gunicorn
