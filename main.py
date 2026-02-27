@@ -14,7 +14,7 @@
 from fastapi import FastAPI
 
 app = FastAPI()
-
+print('API starting...')
 @app.get("/")
 def root():
     return {"message": "FastAPI running on EC2 🚀"}
