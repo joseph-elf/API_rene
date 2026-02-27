@@ -3,3 +3,5 @@ sentencepiece
 IPython
 matplotlib
 torch
+pydantic
+fastapi

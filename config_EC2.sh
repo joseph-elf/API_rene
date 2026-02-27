@@ -8,7 +8,7 @@ IP=16.171.173.85
 SSH_FILE=~/.ssh/api-rene.pem
 
 # Git-Hub repo of the project
-GIT_HUB_repo_of_the_project=https://github.com/joseph-elf/Rene.git
+GIT_HUB_repo_of_the_project=https://github.com/joseph-elf/API_rene.git
 
 # Name of the project
 NAME_of_the_project=Rene
