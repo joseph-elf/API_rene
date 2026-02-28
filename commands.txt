@@ -1,5 +1,5 @@
 # single worker
-uvicorn main:app --host 127.0.0.1 --port 8000
+uvicorn main:app --host 127.0.0.1 --port 8000 --reload
 
 # 2 workers
 gunicorn \
@@ -9,3 +9,44 @@ main:app \
 --bind 127.0.0.1:8000 \
 --access-logfile - \
 --error-logfile -
+
+
+
+
+
+
+
+
+
+
+sudo nano /etc/systemd/system/fastapi.service
+
+
+[Unit]
+Description=FastAPI App
+After=network.target
+
+[Service]
+User=ubuntu
+WorkingDirectory=/home/ubuntu/API_rene
+ExecStart=/home/ubuntu/venv/bin/gunicorn main:app -c /home/ubuntu/API_rene/config_gunicorn.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+
+#reload systemd
+sudo systemctl daemon-reload
+
+
+# start/restart fastapi system md
+sudo systemctl start fastapi
+sudo systemctl restart fastapi
+sudo systemctl stop fastapi
+
+# start automatically when reboot
+sudo systemctl enable fastapi
+
+# monitor
+sudo systemctl status fastapi
+sudo journalctl -u fastapi -f

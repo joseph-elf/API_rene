@@ -11,10 +11,31 @@
 
 #app = FastAPI()
 
+from package import *
+import torch
+
 from fastapi import FastAPI
 
 app = FastAPI()
+
+device = torch.device("cpu")
+tokenizer = SingleCharTokenizer()
+tokens = torch.tensor(tokenizer.load_tokens("tokens_sc.tok")).to(device)
+
+init = "bonjour, je m'appelle chateaubriand. je suis un homme de mon temps, j'ai connu les voyages, la revolutions et les cataclysmes politiques et je pense que la revolution a eu un impact catastrophique sur la france. pour l'affirmer je fais appel a l'autorite du pape leon. bonjour, je m'appelle chateaubriand. je suis un homme de mon temps, j'ai connu les voyages, la revolutions et les cataclysmes politiques et je pense que la revolution a eu un impact catastrophique sur la france. pour l'affirmer je fais appel a l'autorite du pape leon. bonjour, je m'appelle chateaubriand. je suis un homme de mon temps, j'ai connu les voyages, la revolutions et les cataclysmes politiques. "
+
+init_tok = tokenizer.encode(init)
+
+model = torch.load("gpt_cpu.w").to(device)
+model.eval()
+
+
+
+
 print('API starting...')
+
+
+
 @app.get("/")
 def root():
     return {"message": "FastAPI running on EC2 🚀"}
@@ -31,3 +52,4 @@ def root():
 # @app.get("/")
 # def home():
 #     return {"message": "API is working"}
+
