@@ -2,7 +2,7 @@
 USERNAME=ubuntu
 
 # IP of the EC2 instance
-IP=51.20.1.219
+IP=13.60.78.145
 
 # SSH key file
 SSH_FILE=~/.ssh/api-rene.pem

@@ -1,11 +1,11 @@
 # USERNAME of the EC2 instance
-USERNAME=ubuntu
+USERNAME=root
 
 # IP of the EC2 instance
-IP=13.53.197.152
+IP=94.237.90.64
 
 # SSH key file
-SSH_FILE=~/.ssh/api-rene.pem
+SSH_FILE=~/.ssh/api-rene
 
 # Git-Hub repo of the project
 GIT_HUB_repo_of_the_project=https://github.com/joseph-elf/API_rene.git

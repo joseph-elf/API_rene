@@ -26,7 +26,7 @@ init = "bonjour, je m'appelle chateaubriand. je suis un homme de mon temps, j'ai
 
 init_tok = tokenizer.encode(init)
 
-model = torch.load("gpt_cpu.w").to(device)
+model = GPT.load("gpt_low_cpu.w").to(device)
 model.eval()
 
 
