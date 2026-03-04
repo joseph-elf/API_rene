@@ -50,3 +50,20 @@ sudo systemctl enable fastapi
 # monitor
 sudo systemctl status fastapi
 sudo journalctl -u fastapi -f
+
+
+sudo apt install htop
+
+sudo apt install netdata -y
+
+
+
+
+
+location /netdata/ {
+        proxy_pass http://127.0.0.1:19999/;
+        proxy_set_header Host $host;
+        proxy_http_version 1.1;
+        proxy_set_header Connection "";
+        proxy_redirect off;
+    }

@@ -16,7 +16,7 @@ import torch
 
 from fastapi import FastAPI
 
-app = FastAPI()
+app = FastAPI(root_path="/api")
 
 device = torch.device("cpu")
 tokenizer = SingleCharTokenizer()
